@@ -27,6 +27,10 @@
         <div id="logo">
             <img src="images/Group 20.png" alt="logo/urban-fashion">
         </div>
+        <!--   Hamburger icon     -->
+        <div class="hamburger">
+            <i data-feather="menu"></i>
+        </div>
         <!--     menu section       -->
         <ul class="menu">
             <li><a href="#">home</a></li>
@@ -37,7 +41,7 @@
         </ul>
         <!--     Search box       -->
         <div class="search-box">
-            <input type="text" name="search" id="search">
+            <input type="text" name="search" id="sidebar-search">
             <button class="btn search-btn"><i data-feather="search"></i></button>
         </div>
         <!--     action      -->
@@ -54,8 +58,38 @@
             </div>
         </div>
     </nav>
-    <!--    navigation bar ends    -->
 
+    <!--    navigation bar ends    -->
+<!--  responsive nav start  -->
+    <aside class="sidebar">
+        <!--     menu section       -->
+        <ul class="sidebar-menu">
+            <li><a href="#">home</a></li>
+            <li class="shop-btn"><a href="#">shop</a></li>
+            <li><a href="#">product</a></li>
+            <li><a href="#">page</a></li>
+            <li><a href="#">blog</a></li>
+        </ul>
+        <!--     Search box       -->
+        <div class="sidebar-search-box">
+            <input type="text" name="search" id="search">
+            <button class="btn search-btn"><i data-feather="search"></i></button>
+        </div>
+        <!--     action      -->
+        <div class="sidebar-actions">
+            <!--     cart action       -->
+            <div class="cart">
+                <i data-feather="shopping-bag"></i>
+                <span>cart</span>
+            </div>
+            <!--     user action       -->
+            <div class="user">
+                <img src="images/user.svg" alt="profile-picture" class="user-pic">
+                <p>alex pitter</p>
+            </div>
+        </div>
+    </aside>
+<!--  responsive nav end  -->
     <!--  submenu starts    -->
     <aside class="submenu">
         <div class="submenu-content">

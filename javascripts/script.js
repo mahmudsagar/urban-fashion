@@ -1,14 +1,50 @@
+// active class for active menus
 const addActive = ()=>{
     const navLinks = document.querySelectorAll('.menu li a')
+    const sidebarNavLinks = document.querySelectorAll('.sidebar-menu li a')
     const currentLocation = location.href
     const navLength = navLinks.length
+    const sidebarNavLength = sidebarNavLinks.length
     for (let i = 0; i<navLength;i++){
         if(navLinks[i].href ===currentLocation){
             navLinks[i].classList.add('active')
         }
     }
+    for (let i = 0; i<sidebarNavLength;i++){
+        if(sidebarNavLength[i].href ===currentLocation){
+            sidebarNavLength[i].classList.add('active')
+        }
+    }
 }
+//submenu function
+const submenu = document.querySelector('.submenu')
+const shopBtn = document.querySelector('.shop-btn')
+const link = shopBtn.querySelector('a')
+shopBtn.addEventListener('click',(e)=>{
+    e.preventDefault()
+    submenu.classList.toggle('show-submenu')
+    link.classList.toggle('active')
+})
 
+//submenu function for mobile
+const sidebarShopBtn = document.querySelector('.sidebar-menu .shop-btn')
+const sidebarLink = sidebarShopBtn.querySelector('a')
+sidebarShopBtn.addEventListener('click',(e)=>{
+    e.preventDefault()
+    submenu.classList.toggle('show-submenu')
+    sidebarLink.classList.toggle('active')
+})
+
+//hamburger icon functions
+
+const hamburgerBtn = document.querySelector('.hamburger')
+const sidebar = document.querySelector('.sidebar')
+
+hamburgerBtn.addEventListener('click', ()=>{
+    sidebar.classList.toggle('show-submenu')
+})
+
+// product slider
 const firstProductSlider = () => {
     const prev = document.querySelector('.prev')
     const next = document.querySelector('.next')
@@ -49,6 +85,7 @@ const firstProductSlider = () => {
         nextSlide();
     }, 4000);
 }
+//product slider
 const secondProductSlider = () => {
     const slider = document.querySelector('.product-container-2')
     const prev = slider.querySelector('.prev')
@@ -89,6 +126,7 @@ const secondProductSlider = () => {
         nextSlide();
     }, 3000);
 }
+//testimonial slider
 const testimonialSlider = () => {
     const slider = document.querySelector('.testimonial-container')
     const slides = document.querySelectorAll('.testimonial-card-container')
@@ -124,15 +162,6 @@ const testimonialSlider = () => {
     });
 }
 
-
-const submenu = document.querySelector('.submenu')
-const shopBtn = document.querySelector('.shop-btn')
-const link = shopBtn.querySelector('a')
-shopBtn.addEventListener('click',(e)=>{
-    e.preventDefault()
-    submenu.classList.toggle('show-submenu')
-    link.classList.toggle('active')
-})
 
 window.onload = ()=> {
     firstProductSlider()
