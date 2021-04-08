@@ -42,7 +42,9 @@ const sidebar = document.querySelector('.sidebar')
 
 hamburgerBtn.addEventListener('click', ()=>{
     sidebar.classList.toggle('show-submenu')
+    submenu.classList.toggle('show-submenu')
 })
+
 
 // product slider
 const firstProductSlider = () => {

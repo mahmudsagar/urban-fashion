@@ -218,13 +218,23 @@ h1, h2, h3, h4, h5 {
     .submenu{
         position: static;
         grid-template-columns: 1fr;
-        grid-row-gap: 1.5rem;
+        grid-row-gap: 1rem;
         transform: translateX(0);
-        width: 100%;
+        width: 95%;
+        justify-items: center;
+        padding: 1rem 0 0 1rem;
     }
     .submenu-content{
         grid-template-columns: repeat(4, 10rem);
         justify-items: left;
+    }
+    .submenu-img img {
+        width: 100%;
+    }
+}
+@media (max-width: 425px) {
+    .submenu-content {
+        grid-template-columns: repeat(2, 10rem);
     }
 }
 /*sidebar styles*/
@@ -284,7 +294,7 @@ h1, h2, h3, h4, h5 {
     background-size: cover;
     width: 100%;
     height: 100%;
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 10px 0 0 10px;
 }
 
 /*hero-text*/
@@ -294,7 +304,7 @@ h1, h2, h3, h4, h5 {
     display: grid;
     align-items: center;
     justify-items: center;
-    border-radius: 0px 10px 10px 0px;
+    border-radius: 0 10px 10px 0;
     position: relative;
 }
 
@@ -417,7 +427,7 @@ h1, h2, h3, h4, h5 {
     color: #ffffff;
     padding-left: 1.5rem;
     font-size: 1.875rem;
-    line-height: 33.24px;
+    line-height: 2.0775rem;
 }
 
 .banner-1 span {
@@ -499,7 +509,7 @@ h1, h2, h3, h4, h5 {
     right: 1.5rem;
     bottom: 1.5rem;
     background: #6E98A6;
-    border-radius: 3.76316px;
+    border-radius: 4px;
     padding: .9375rem 1.875rem;
 }
 
@@ -523,8 +533,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /*best selling products section start  */
-
-/*card container*/
+/*best selling products section background images*/
 #best-selling-product{
     position: relative;
 }
@@ -551,6 +560,7 @@ h1, h2, h3, h4, h5 {
     right: -115px;
     background-size: contain;
 }
+/*Best selling card container*/
 .product-container, .product-container-2 {
     position: relative;
     display: grid;
@@ -568,7 +578,7 @@ h1, h2, h3, h4, h5 {
     transition: all 0.75s ease;
 }
 
-/*card*/
+/*best selling card*/
 .card {
     display: inline-block;
     margin-right: 60px;
@@ -603,7 +613,7 @@ h1, h2, h3, h4, h5 {
     font-size: 1.125rem;
 }
 
-/*Card slider controller*/
+/*best selling Card slider controller*/
 .next, .prev {
     position: absolute;
     background: #6E98A6;
@@ -613,7 +623,7 @@ h1, h2, h3, h4, h5 {
     transform: translateY(-50%);
 }
 
-/*slider controller*/
+/* best selling slider controller*/
 .prev {
     left: 0;
     display: none;
@@ -622,10 +632,27 @@ h1, h2, h3, h4, h5 {
 .next {
     right: 2px;
 }
-
+/*mobile design for best selling product section*/
+@media (max-width: 768px){
+    #best-selling-product:after{
+        right: 0;
+        z-index: -999999;
+    }
+}
+@media (max-width: 425px){
+    #best-selling-product:before{
+        width: 150px;
+        height: 150px;
+        left: -27px;
+        top: 115px;
+    }
+    #best-selling-product:after{
+        width: 100px;
+        height: 100px;
+        top: 55%;
+    }
+}
 /*testimonial section*/
-
-
 #testimonial {
     position: relative;
 }
@@ -641,7 +668,7 @@ h1, h2, h3, h4, h5 {
     top: 0;
 }
 
-/*card slider container*/
+/*testimonial card slider container*/
 .testimonial-container {
     position: relative;
     width: 79.375vw;
@@ -664,7 +691,7 @@ h1, h2, h3, h4, h5 {
     margin-top: 100px;
 }
 
-/*card text*/
+/*testimonial card text*/
 .comments {
     color: #767676;
     font-size: 18px;
@@ -672,7 +699,7 @@ h1, h2, h3, h4, h5 {
     margin-top: 10px;;
 }
 
-/*card image*/
+/*testimonial card image*/
 #testimonial .card img {
     width: 100%;
 }
@@ -681,7 +708,7 @@ h1, h2, h3, h4, h5 {
     position: relative;
 }
 
-/*quotation icon*/
+/*testimonial quotation icon*/
 #testimonial .card-image:after {
     content: "";
     display: block;
@@ -718,7 +745,13 @@ h1, h2, h3, h4, h5 {
     #testimonial .section-header {
         text-align: center;
     }
-
+    #testimonial .card-image:after {
+        width: 20px;
+        height: 20px;
+        right: 10px;
+        padding: 1rem;
+        bottom: -23px;
+    }
     .overlap {
         position: static;
     }
@@ -729,17 +762,25 @@ h1, h2, h3, h4, h5 {
     }
 
     .testimonial-card-container {
-        display: block;
+        display: grid;
         position: static;
         margin-bottom: 2rem;
+        grid-gap: 1rem;
     }
-
+    .testimonial-card-container .card{
+        margin-right: 0;
+    }
     .bottom-card {
         margin-top: 0;
         margin-bottom: 2rem;
     }
     .testimonial-prev, .testimonial-next{
         display: none !important;
+    }
+}
+@media (max-width: 425px) {
+    .testimonial-card-container{
+        grid-auto-flow: row;
     }
 }
 
@@ -800,7 +841,7 @@ h1, h2, h3, h4, h5 {
 
 .social-links li {
     display: inline-block;
-    padding: 34.28px 0;
+    padding: 2.1425rem 0;
 }
 
 .social-links a, .footer-menu a {
