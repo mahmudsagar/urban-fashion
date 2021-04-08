@@ -60,7 +60,7 @@ const firstProductSlider = () => {
             count = count - 2;
             sliderList.style.left = '-' + count * sliderWidth + 'px';
             count++;
-        } else if (count == 1) {
+        } else if (count === 1) {
             count = items - 1;
             sliderList.style.left = '-' + count * sliderWidth + 'px';
             count++;
@@ -74,7 +74,7 @@ const firstProductSlider = () => {
             sliderList.style.left = '-' + count * sliderWidth + 'px';
             count++;
             prev.style.display = 'block'
-        } else if (count == items) {
+        } else if (count === items) {
             sliderList.style.left = '0px';
             count = 1;
             prev.style.display = 'none'
@@ -101,7 +101,7 @@ const secondProductSlider = () => {
             count = count - 2;
             sliderList.style.left = '-' + count * sliderWidth + 'px';
             count++;
-        } else if (count == 1) {
+        } else if (count === 1) {
             count = item - 1;
             sliderList.style.left = '-' + count * sliderWidth + 'px';
             count++;
@@ -115,7 +115,7 @@ const secondProductSlider = () => {
             sliderList.style.left = '-' + count * sliderWidth + 'px';
             count++;
             prev.style.display = 'block'
-        } else if (count == item) {
+        } else if (count === item) {
             sliderList.style.left = '0px';
             count = 1;
             prev.style.display = 'none'

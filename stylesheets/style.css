@@ -514,13 +514,24 @@ h1, h2, h3, h4, h5 {
 }
 
 /*mobile style for banner*/
+@media (max-width: 1020px){
+    .large-banners h3{
+        width: auto;
+        margin: 0;
+    }
+}
 @media (max-width: 768px) {
     #banner {
         grid-template-columns: none;
         grid-row-gap: 1.5rem;
         padding: 1rem;
     }
-
+    .banner-1 h3{
+        bottom: 2.5rem;
+    }
+    .banner-1 p{
+        bottom: 1rem;
+    }
     .large-banners {
         min-height: 400px;
         width: 100%;
@@ -633,6 +644,12 @@ h1, h2, h3, h4, h5 {
     right: 2px;
 }
 /*mobile design for best selling product section*/
+@media (max-width: 1020px){
+    #best-selling-product:after{
+        right: 0;
+        z-index: -999999;
+    }
+}
 @media (max-width: 768px){
     #best-selling-product:after{
         right: 0;
