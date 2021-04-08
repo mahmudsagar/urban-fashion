@@ -690,24 +690,22 @@ input:focus {
 /*testimonial header*/
 #testimonial .section-header {
   text-align: left;
-  padding: 0 1rem;
 }
 
 /*testimonial card container*/
 .overlap {
   position: absolute;
   top: 0;
-  padding: 0 1rem;
-
 }
 
 /*testimonial card slider container*/
 .testimonial-container {
   position: relative;
-  width: 97vw;
-  max-width: 97vw;
+  width: 79.375vw;
+  max-width: 79.375rem;
   overflow: hidden;
   height: 36.5625rem;
+  margin: 0 auto;
 }
 
 .testimonial-card-container {
@@ -779,6 +777,23 @@ input:focus {
 }
 
 /*mobile style for testimonial*/
+@media (max-width: 1024px) {
+  #testimonial .section-header {
+    padding: 0 1rem;
+  }
+
+  /*testimonial card container*/
+  .overlap {
+    padding: 0 1rem;
+  }
+
+  /*testimonial card slider container*/
+  .testimonial-container {
+    position: relative;
+    width: 97vw;
+    max-width: 97vw;
+  }
+}
 @media (max-width: 768px) {
   #testimonial .section-header {
     text-align: center;
