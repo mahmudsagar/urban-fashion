@@ -68,7 +68,8 @@ const ProductSlider = (slider, sliderList, interval) => {
   }
 
   if (screenSize <= 500) {
-    sliderWidth = slider.querySelector(".slider-container .card").offsetWidth+30;
+    sliderWidth =
+      slider.querySelector(".slider-container .card").offsetWidth + 30;
     items = sliderList.querySelectorAll(".card").length;
   }
 
@@ -90,7 +91,6 @@ const ProductSlider = (slider, sliderList, interval) => {
       sliderList.style.left = "-" + count * sliderWidth + "px";
       count++;
       prev.style.display = "block";
-
     } else if (count === items) {
       sliderList.style.left = "0px";
       count = 1;
@@ -143,7 +143,7 @@ const testimonialSlider = () => {
 
 window.onload = () => {
   ProductSlider(slider, sliderList, 4000);
-  // ProductSlider(slider1, sliderList1, 4500);
+  ProductSlider(slider1, sliderList1, 4500);
   showSubMenu(shopBtn, link);
   showSubMenu(sidebarShopBtn, sidebarLink);
   testimonialSlider();
