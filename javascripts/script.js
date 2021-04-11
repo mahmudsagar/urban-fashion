@@ -27,7 +27,6 @@ const sidebarShopBtn = document.querySelector(".sidebar-menu .shop-btn");
 const sidebarLink = sidebarShopBtn.querySelector("a");
 
 const showSubMenu = (triggeBtn, targetlink) => {
-  console.log(triggeBtn);
   triggeBtn.addEventListener("click", (e) => {
     e.preventDefault();
     submenu.classList.toggle("show-submenu");
@@ -52,22 +51,37 @@ const slider1 = document.querySelector(".product-container-2");
 const sliderList1 = document.querySelector(".slider-container-2");
 
 // product slider
-const ProductSlider = (slider, sliderList) => {
+const ProductSlider = (slider, sliderList, interval) => {
   const prev = slider.querySelector(".prev");
   const next = slider.querySelector(".next");
   let sliderWidth = slider.offsetWidth / 3;
   let items = sliderList.querySelectorAll(".card").length - 2;
   let count = 1;
+  let screenSize = window.screen.width;
+  window.addEventListener("resize", function () {
+    screenSize = window.screen.width;
+  });
+
+  if (screenSize <= 768) {
+    sliderWidth = slider.offsetWidth / 2;
+    items = sliderList.querySelectorAll(".card").length;
+  }
+
+  if (screenSize <= 500) {
+    sliderWidth = slider.querySelector(".slider-container .card").offsetWidth+30;
+    items = sliderList.querySelectorAll(".card").length;
+  }
+
   const prevSlide = () => {
     if (count > 1) {
       count = count - 2;
       sliderList.style.left = "-" + count * sliderWidth + "px";
       count++;
+      prev.style.display = "block";
     } else if (count === 1) {
       count = items - 1;
       sliderList.style.left = "-" + count * sliderWidth + "px";
       count++;
-      prev.style.display = "none";
     }
   };
 
@@ -76,6 +90,7 @@ const ProductSlider = (slider, sliderList) => {
       sliderList.style.left = "-" + count * sliderWidth + "px";
       count++;
       prev.style.display = "block";
+
     } else if (count === items) {
       sliderList.style.left = "0px";
       count = 1;
@@ -87,7 +102,7 @@ const ProductSlider = (slider, sliderList) => {
   next.addEventListener("click", nextSlide);
   setInterval(() => {
     nextSlide();
-  }, 4000);
+  }, interval);
 };
 
 //testimonial slider
@@ -126,13 +141,11 @@ const testimonialSlider = () => {
   });
 };
 
-
 window.onload = () => {
-  ProductSlider(slider, sliderList);
-  ProductSlider(slider1, sliderList1);
+  ProductSlider(slider, sliderList, 4000);
+  // ProductSlider(slider1, sliderList1, 4500);
   showSubMenu(shopBtn, link);
   showSubMenu(sidebarShopBtn, sidebarLink);
-  // secondProductSlider()
   testimonialSlider();
   addActive();
   submenu.classList.remove("show-submenu");

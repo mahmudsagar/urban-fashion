@@ -154,7 +154,7 @@ input:focus {
   gap: 6px;
   align-items: center;
 }
-.cart button{
+.cart button {
   color: #6e98a6;
 }
 
@@ -605,7 +605,7 @@ input:focus {
 }
 
 /*best selling card*/
-.card {
+.card:not(last-child) {
   display: inline-block;
   margin-right: 60px;
 }
@@ -683,6 +683,10 @@ input:focus {
     width: 100px;
     height: 100px;
     top: 55%;
+  }
+  .card:not(last-child) {
+    display: inline-block;
+    margin-right: 30px;
   }
 }
 /*testimonial section*/
